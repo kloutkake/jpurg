@@ -1,19 +1,30 @@
-'use client';
+"use client";
 import Link from 'next/link';
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    let menuClasses = [];
 
-    useEffect(() => {
-        menuClasses = []
+    function getMenuClasses(){
+        let menuClasses = [];
         if (isOpen) {
-            menuClasses.push("flex");
+            menuClasses = [
+                "flex",
+                "absolute",
+                "top-[60px]",
+                "bg-gray-800",
+                "w-full",
+                "p-4",
+                "left-0",
+                "gap-10",
+                "flex-col",
+            ];
         } else {
-            menuClasses.push("hidden");
+            menuClasses = [ "hidden", "md:flex", ];
         }
-    });
+
+        return menuClasses.join(" ")
+    };
     
     return (
         <nav className='bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center'>
@@ -21,7 +32,7 @@ export const Navbar = () => {
                 <a href="/" className="text-2xl font-bold">
                     JPURG
                 </a>
-                <div className={`${isOpen ? "flex" : "hidden"} flex-col md:flex-row`}>
+                <div className={getMenuClasses()}>
                     <Link href="/blog" className="mx-2 hover:text-grey-300">
                         Blog
                     </Link>
