@@ -33,16 +33,16 @@ export const Navbar = () => {
                     JPURG
                 </a>
                 <div className={getMenuClasses()}>
-                    <Link href="/blog" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/blog" className="mx-2 hover:text-grey-300">
                         Blog
                     </Link>
-                    <Link href="/ctf" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/ctf" className="mx-2 hover:text-grey-300">
                         CTFs
                     </Link>
-                    <Link href="/wanda" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/wanda" className="mx-2 hover:text-grey-300">
                         WSM
                     </Link>
-                    <Link href="/gallery" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/gallery" className="mx-2 hover:text-grey-300">
                         Gallery
                     </Link>
                 </div>
