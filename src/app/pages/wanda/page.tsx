@@ -1,3 +1,3 @@
 export default function WSM() {
-    return <div>Wanda's art page in progress</div>;
+    return <div>Wandas art page in progress</div>;
   }
