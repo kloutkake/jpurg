@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+
     function getMenuClasses(){
         let menuClasses = [];
         if (isOpen) {
@@ -27,22 +28,19 @@ export const Navbar = () => {
     };
     
     return (
-        <nav className='bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center'>
+        <nav className='color-#3730A3 bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center'>
             <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="text-2xl font-bold">
+                <a href="/" className="font-mono text-3xl font-bold">
                     JPURG
                 </a>
                 <div className={getMenuClasses()}>
-                    <Link href="/pages/blog" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/blog" className="font-mono text-2x1 mx-2 hover:text-grey-300">
                         Blog
                     </Link>
-                    <Link href="/pages/ctf" className="mx-2 hover:text-grey-300">
-                        CTFs
-                    </Link>
-                    <Link href="/pages/wanda" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/wanda" className="font-mono text-2x1 mx-2 hover:text-grey-300">
                         WSM
                     </Link>
-                    <Link href="/pages/gallery" className="mx-2 hover:text-grey-300">
+                    <Link href="/pages/gallery" className="font-mono text-2x1 mx-2 hover:text-grey-300">
                         Gallery
                     </Link>
                 </div>

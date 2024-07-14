@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function Gallery() {
-    return <div>Gallery in progress</div>;
+    return <div className="text-black">Gallery in progress</div>;
   }

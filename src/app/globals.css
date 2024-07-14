@@ -32,6 +32,8 @@ body {
   background-color: rgba(200, 160, 255, 0.5); /* Adjust alpha value as needed */
 }
 
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
