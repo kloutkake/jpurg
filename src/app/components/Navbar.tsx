@@ -12,12 +12,12 @@ export const Navbar = () => {
             menuClasses = [
                 "flex",
                 "absolute",
-                "top-[60px]",
-                "bg-gray-800",
-                "w-full",
-                "p-4",
-                "left-0",
-                "gap-10",
+                "top-[80px]",
+                "left-[20px]",
+                "right-[20px]",
+                "bg-emerald-900",
+                "p-6",
+                "gap-7",
                 "flex-col",
             ];
         } else {
@@ -28,21 +28,34 @@ export const Navbar = () => {
     };
     
     return (
-        <nav className='color-#3730A3 bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center'>
+        <nav className='bg-emerald-900 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center'>
             <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="font-mono text-3xl font-bold">
+                <a href="/" className="font-mono text-3xl font-bold text-violet-200 hover:text-orange-500">
                     JPURG
                 </a>
                 <div className={getMenuClasses()}>
-                    <Link href="/pages/blog" className="font-mono text-2x1 mx-2 hover:text-grey-300">
-                        Blog
-                    </Link>
-                    <Link href="/pages/wanda" className="font-mono text-2x1 mx-2 hover:text-grey-300">
-                        WSM
-                    </Link>
-                    <Link href="/pages/gallery" className="font-mono text-2x1 mx-2 hover:text-grey-300">
-                        Gallery
-                    </Link>
+                    <Link 
+                        href="/pages/resume" 
+                        className="font-mono text-2x1 text-violet-200 mx-2 hover:text-orange-500"
+                        onClick={() => setIsOpen(false)}
+                        >Resume</Link>
+                    <Link 
+                        href="/pages/blog" 
+                        className="font-mono text-2x1 text-violet-200 mx-2 hover:text-orange-500"
+                        onClick={() => setIsOpen(false)}>
+                        Blog</Link>
+                    <Link 
+                        href="/pages/wanda"
+                        className="font-mono text-2x1 text-violet-200 mx-2 hover:text-orange-500"
+                        onClick={() => setIsOpen(false)}
+                        >
+                        WSM</Link>
+                    <Link 
+                        href="/pages/gallery" 
+                        className="font-mono text-2x1 text-violet-200 mx-2 hover:text-orange-500"
+                        onClick={() => setIsOpen(false)}
+                        >
+                        Gallery</Link>
                 </div>
 
                 <div className="md:hidden flex items-center">

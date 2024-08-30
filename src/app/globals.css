@@ -30,8 +30,49 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgba(200, 160, 255, 0.5); /* Adjust alpha value as needed */
+  font-family: Arial, sans-serif, mono;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-top: 40px;
+  color: #333;
+}
+
+h3 {
+  margin: 20px 0 10px 0;
+  color: #555;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+strong {
+  color: #333;
+}
 
 
 @layer utilities {

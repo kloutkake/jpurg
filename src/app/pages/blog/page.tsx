@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-  return <div className="text-black">Blog page in progress</div>;
+  return <div className="font-mono text-black">Blog page in progress</div>;
 }

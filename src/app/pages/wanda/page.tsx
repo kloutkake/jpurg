@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function WSM() {
-    return <div className="text-black">Wandas art page in progress</div>;
+    return <div className="font-mono text-black">Wandas art page in progress</div>;
   }
