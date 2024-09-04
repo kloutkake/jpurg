@@ -1,13 +1,6 @@
 My Website
 
 This is a Next.js project built with TypeScript, styled using Tailwind CSS, and hosted on a DigitalOcean Droplet with Nginx as the web server. The server runs on an Ubuntu operating system, with security enhancements including a configured firewall and SSL for secure connections.
-Table of Contents
-
-    Features
-    Technologies Used
-    Security
-    Maintenance
-
 
 Features
 
