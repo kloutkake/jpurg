@@ -1,43 +1,36 @@
-This README provides an overview of my personal website, including relevant information for setup and maintenance.
+My Website
 
-Technologies Used:
+This is a Next.js project built with TypeScript, styled using Tailwind CSS, and hosted on a DigitalOcean Droplet with Nginx as the web server. The server runs on an Ubuntu operating system, with security enhancements including a configured firewall and SSL for secure connections.
+Table of Contents
+
+    Features
+    Technologies Used
+    Security
+    Maintenance
+
+
+Features
+
+    Responsive design using Tailwind CSS.
+    Server-side rendering with Next.js.
+    TypeScript for static type checking.
+    Secure connections with SSL.
+    Firewall configured for enhanced security.
+
+Technologies Used
 
     Framework: Next.js
     Language: TypeScript
     CSS Framework: Tailwind CSS
-    Server: Apache
+    Server: Nginx
     Hosting: DigitalOcean
-    Security: Firewall configured
-    SSL: Enabled for secure connections
+    Operating System: Ubuntu
+    Security: Configured firewall and SSL enabled
 
-Setup:
+Security
 
-  Clone Repository:
-    Clone the repository to your local machine using Git:
-
-      git clone <repository-url>
-
-  Install Dependencies:
-  Navigate into the project directory and install dependencies using npm or yarn:
-
-    cd <project-directory>
-    npm install
-
-  Configuration:
-
-  Ensure Apache is installed and configured to serve the Next.js application.
-  Configure the VirtualHost in Apache to point to the project's build directory.
-  Set up SSL certificate for secure connections.
-
-  Build and Deploy:
-  Build the Next.js application and deploy it to your server:
-  
-    npm run build
-
-Start Server:
-Start the Apache server to serve the website:
-
-    sudo systemctl start apache2
+    Firewall: The server’s firewall is configured to allow only necessary traffic.
+    SSL: SSL is enabled to secure all connections to the website.
 
 Maintenance:
 
@@ -52,8 +45,4 @@ Maintenance:
     Monitoring:
         Set up monitoring tools to track server performance, uptime, and any potential issues.
 
-Additional Notes:
 
-  Ensure the firewall is configured to allow necessary traffic (e.g., HTTP, HTTPS) and block unauthorized access.
-    Regularly review SSL certificate expiry dates and renew them before expiration.
-    Utilize version control (Git) for tracking changes and collaborating with others on the project.
