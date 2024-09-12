@@ -6,6 +6,7 @@
     margin: 0 auto;
     max-width: 800px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000000;
   }
   
   .headerTitle {
@@ -26,12 +27,14 @@
     border-bottom: 2px solid #f58a33;
     padding-bottom: 5px;
     margin-top: 40px;
-    color: #333;
+    color: #000000;
+    font-weight: bold;
   }
   
   .subsectionTitle {
     margin: 20px 0 10px 0;
     color: #555;
+    font-weight: bold;
   }
 
 /* Responsive styles for smaller screens */
