@@ -51,15 +51,7 @@ export default function Resume() {
       <section>
         <h2 className={styles["sectionTitle"]}>Career Profile</h2>
         <p>
-          Dedicated Cybersecurity graduate from the University of North Texas, an ABET
-          accredited program, with both theoretical and practical knowledge. Seeking employment 
-          in a Systems Security Analyst or SOC Analyst related field.  Looking for a proactive,
-          detail-oriented, and dynamic work environment. Strong understanding of OSI model,
-          TCP/IP protocols, OWASP top 10, and general knowledge of information security
-          principles and practices such as CIA and STRIDE. Skilled at object-oriented
-          programming, data structures, algorithms, databases, communication, organization, and
-          documentation. Highly motivated, team player, problem solver, and excited to start my
-          journey in the industry of Cybersecurity.
+        Seeking opportunities as a SOC or Security Analyst, while also open to Data Analysis, Jr. Systems Administration, and entry-level IT roles. Highly motivated team player and problem solver, eager to contribute to a dynamic work environment that embraces challenges and fosters growth. Passionate about starting a career in Cybersecurity.
         </p>
       </section>
 
@@ -77,62 +69,73 @@ export default function Resume() {
       </section>
 
       <section>
+        <h2 className={styles["sectionTitle"]}>Certifications</h2>
+        <p className={styles["innerText"]}>Certified in Cybersecurity (CC), (ISC)<sup>2</sup> - Oct 2023</p>
+        <p className={styles["innerText"]}>Certified Cybersecurity Technician (CCT), EC Council - Dec 2023</p>
+        <p className={styles["innerText"]}>NSA and DHS CAE-CDE Cybersecurity Certificate, UNT - May 2024</p>
+      </section>
+
+      <section>
         <h2 className={styles["sectionTitle"]}>Technical Skills</h2>
+        <p className={styles["innerText"]}>Programming Languages/Frameworks:</p>
         <ul>
           <li>
-            <strong>Programming Languages/Frameworks:</strong> C/C++, Python, Bash, HTML/CSS,
-            JavaScript, React, Next.js
+            C/C++, Python, Bash, HTML/CSS, JavaScript, React, Next.js
           </li>
+        </ul>
+        <p className={styles["innerText"]}>Cybersecurity Tools and Libraries:</p>
+        <ul>
           <li>
-            <strong>Cybersecurity Tools and Libraries:</strong> Nmap, Wireshark, wfuzz, ffuf,
-            Apache, Nginx, Scapy, John the Ripper
+            Nmap, Wireshark, wfuzz, ffuf, Apache, Nginx, Scapy, John the Ripper
           </li>
+        </ul> 
+        <p className={styles["innerText"]}>Operating Systems:</p>
+        <ul>
           <li>
-            <strong>Operating Systems:</strong> Windows, Linux (Arch: EndeavourOS, Debian:
-            Ubuntu, Kali)
+            Windows, Linux (Arch: EndeavourOS, Debian: Ubuntu, Kali)
           </li>
+        </ul> 
+        <p className={styles["innerText"]}>Other:</p>
+        <ul>
           <li>
-            <strong>Certifications:</strong> NSA and DHS CAE-CDE Cybersecurity Certificate, UNT.
-            EC Council Certified Cybersecurity Technician (CCT). (ISC)² Certified in Cybersecurity
-            (CC). Studying for CompTIA Security+.
-          </li>
-          <li>
-            <strong>Other:</strong> Visual Studio, Git, VMware Workstation, VirtualBox, Prisma,
-            Microsoft Office Suite, Vim
+            Visual Studio, Git, VMware Workstation, VirtualBox, Prisma, Microsoft Office Suite, Vim
           </li>
         </ul>
       </section>
 
       <section>
         <h2 className={styles["sectionTitle"]}>Engineering Projects</h2>
-        <h3 className={styles["subsectionTitle"]}>UNT, DoS/DDoS IDS/IPS | May 2023</h3>
+        <h3 className={styles["subsectionTitle"]}>UNT, DoS/DDoS IDS/IPS (GitHub) | May 2023</h3>
         <ul>
           <li>
-            Collaborated with a team of 4 to develop Python-based tools for executing DoS/DDoS,
-            SYN Flood, Ping Flood, and Firefox tab attacks.
+            Collaborated with a team of 4 to develop Python-based tools for executing DoS/DDoS, SYN Flood, Ping Flood, and Firefox tab attacks.
           </li>
           <li>
-            Engineered an Intrusion Detection and Prevention System (IDPS) using multiprocessing
-            and Scapy to mitigate network attacks.
+            Engineered an Intrusion Detection and Prevention System (IDPS) using multiprocessing and Scapy to mitigate network attacks.
           </li>
           <li>
-            Monitored packets and CPU usage, implementing automatic IP blocking and process
-            termination upon threshold breaches.
+            Monitored packets and CPU usage, implementing automatic IP blocking and process termination upon threshold breaches.
           </li>
         </ul>
         <h3 className={styles["subsectionTitle"]}>Policies and Procedures | Jan 2023</h3>
         <ul>
           <li>
-            Developed policies for an international healthcare organization spanning North America
-            and Europe, guided by NIST SP-800 series.
+            Developed policies for an international healthcare organization spanning North America and Europe, guided by NIST SP-800 series.
           </li>
           <li>
-            Designed comprehensive procedures for data protection (PII, PCI, FERPA, PHI), technology
-            (VPN, encryption), and security (incident response, risk assessment).
+            Designed comprehensive procedures for data protection (PII, PCI, FERPA, PHI), technology (VPN, encryption), and security (incident response, risk assessment).
           </li>
           <li>
-            Established user access protocols including password management, application development,
-            and multi-factor authentication (MFA).
+            Established user access protocols including password management, application development, and multi-factor authentication (MFA).
+          </li>
+        </ul>
+        <h3 className={styles["subsectionTitle"]}>CVE Exploitation & Vulnerability Research Projects (GitHub) | Sep 2024</h3>
+        <ul>
+          <li>
+            Developed Proof of Concept (PoC) scripts using Python to exploit critical known vulnerabilities.
+          </li>
+          <li>
+            Configured and tested vulnerable environments, conducting in-depth vulnerability research and automating exploit testing with Python and Bash scripts.
           </li>
         </ul>
       </section>
@@ -158,18 +161,14 @@ export default function Resume() {
 
       <section>
         <h2 className={styles["sectionTitle"]}>Professional & Student Organizations</h2>
-        <p>
-          <strong>UNT Cyber Security and Information Club</strong> 
-        </p>
-        <p className={styles["innerText"]}>
-        | Aug 2022 – May 2024
-        </p>
-        <p>
-          <strong>North Texas ISSA (Information Systems Security Association)</strong>
-        </p>
-        <p>
-        | Dec 2023 – Present
-        </p>
+        <p className={styles["innerText"]}>UNT Cyber Security and Information Club | Aug 2022 – May 2024</p>
+        <ul>
+          <li>Participated in the UCLA LA CTF focusing on Web, Forensics, and OSINT</li>
+        </ul>  
+        <p className={styles["innerText"]}>North Texas ISSA (Information Systems Security Association) | Dec 2023 – Present</p>
+        <ul>
+          <li>Volunteered at the 2024 12<sup>th</sup> Annual Cybersecurity Conference</li>
+        </ul>  
       </section>
     </div>
   );
