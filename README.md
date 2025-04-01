@@ -1,8 +1,8 @@
-My Website
+# My Website
 
 This is a Next.js project built with TypeScript, styled using Tailwind CSS, and hosted on a DigitalOcean Droplet with Nginx to showcase my resume.
 
-Technologies Used
+### Technologies Used
 
     Framework: Next.js
     Language: TypeScript
