@@ -12,12 +12,6 @@ export default function Resume() {
       <header>
         <h1 className={styles["headerTitle"]}>Julian Purgahn</h1>
         <p>
-          Denton, TX 76208 | 409.221.8971 |{" "}
-          <a className={styles["headerLink"]} href="mailto:purgahja@gmail.com">
-            purgahja@gmail.com
-          </a>
-        </p>
-        <p>
           LinkedIn:{" "}
           <a
             className={styles["headerLink"]}
