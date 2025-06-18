@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Blog</title>
+  </head>
+  <body class="bg-gray-600 text-white">
+    <!-- Navbar injected via JavaScript -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Blog Content -->
+    <main class="pt-28 pb-20 px-6 max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6">Blog</h1>
+      <div id="blog-posts" class="space-y-6 text-gray-300">
+        <!-- Blog posts will be injected here -->
+      </div>
+    </main>
+
+    <!-- Navbar loader -->
+    <script>
+      fetch("/frontend/navbar/navbar.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+        });
+    </script>
+
+    <!-- Blog loader script -->
+    <script src="/frontend/scripts/blog.js"></script>
+  </body>
+</html>
