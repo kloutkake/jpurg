@@ -44,7 +44,6 @@
 
           if (!title || !content) {
             messageArea.textContent = "Title and content cannot be empty.";
-            messageArea.style.color = "red";
             return;
           }
 
@@ -57,7 +56,7 @@
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, "-")
             .replace(/(^-|-$)/g, "");
-          const filename = `/posts/${slug}.html`;
+          const filename = `/frontend/posts/${slug}.html`;
 
           try {
             const response = await fetch("/backend/posts", {
@@ -72,20 +71,20 @@
             });
 
             if (response.ok) {
-              messageArea.textContent = "✅ Post added to posts.json!";
+              messageArea.textContent = "✅  Post added to posts.json!";
               messageArea.style.color = "lightgreen";
               document.getElementById("postTitle").value = "";
               document.getElementById("postContent").value = "";
             } else {
               const errorData = await response.json();
-              messageArea.textContent = `❌ Failed to submit post: ${
+              messageArea.textContent = `❌  Failed to submit post: ${
                 errorData.error || "Unknown error"
               }`;
               messageArea.style.color = "red";
             }
           } catch (err) {
             console.error(err);
-            messageArea.textContent = "❌ Error submitting post.";
+            messageArea.textContent = "❌  Error submitting post.";
             messageArea.style.color = "red";
           }
         });
