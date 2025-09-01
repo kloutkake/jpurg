@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Resume</title>
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <body class="bg-gray-600 text-white">
+    <!--#include virtual="/navbar/navbar.html" -->
+    
+    <!-- Resume Content -->
+    <main class="pt-28 pb-12 px-6 max-w-4xl mx-auto">
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold">Julian Purgahn</h1>
+        <p class="text-gray-400">
+          <a
+            href="http://www.linkedin.com/in/julianpurgahn"
+            target="_blank"
+            class="text-blue-400 hover:underline"
+            >LinkedIn</a
+          >
+          |
+          <a
+            href="https://github.com/kloutkake"
+            target="_blank"
+            class="text-blue-400 hover:underline"
+            >GitHub</a
+          >
+          |
+          <a
+            href="https://jpurg.com"
+            target="_blank"
+            class="text-blue-400 hover:underline"
+            >Website</a
+          >
+        </p>
+      </header>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">Summary</h2>
+        <p class="text-gray-300">
+          Aspiring cybersecurity professional with a focus on blue team
+          operations and MDR. Current IT professional with hands-on experience providing 24/7/365 support to over 10,000 end-users across 90+ locations. Strong background in help desk operations, hardware/software troubleshooting, network troubleshooting, ticket management, and customer support. Strong foundational knowledge in
+          InfoSec including traffic and log analysis, SIEM monitoring and rule
+          creation, Endpoint Detection and Response (EDR), threat hunting using
+          frameworks such as MITRE ATT&CK and the Cyber Kill Chain. Excellent
+          problem-solving skills. Open-minded, passionate, and eager to learn.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">Experience</h2>
+        <h3 class="text-xl font-semibold">
+          IT Helpdesk Technician - Berkshire Hathaway Automotive (TX)
+        </h3>
+        <p class="text-gray-400">Sep 2024 - Present</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>
+            Provided 24/7/365 technical support to over 10,000 end-users in 93 locations, troubleshooting hardware, software, and network issues in a fast-paced environment.
+          </li>
+          <li>
+            Created, managed, and prioritized service requests for the Helpdesk, Systems, and Networks teams.
+          </li>
+          <li>
+            Interfaced directly with customers and internal teams to resolve hardware, software, and network connectivity issues, both remote and onsite.
+          </li>
+          <li>
+            Leveraged SIEM to investigate alerts, analyze logs, and generate
+            scheduled reports.
+          </li>
+          <li>
+            Assisted in Endpoint Detection and Response (EDR) management and
+            monitored MDR cases.
+          </li>
+          <li>
+            Managed Active Directory infrastructure including user account provisioning, group policies, OU structures, and permission management for large-scale Windows domain environment
+          </li>
+          <li>
+            Administered enterprise software deployment using PDQ for automated package distribution and maintained comprehensive IT asset inventory and Microsoft licensing compliance
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-5">
+          Home Lab – Personal Infrastructure & Security Lab
+        </h3>
+        <p class="text-gray-400">Sep 2024 - Present</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>
+            Developed and deployed full-stack web application using Flask/Python backend and responsive frontend, hosted on self-managed Ubuntu servers.
+          </li>
+          <li>
+            Built virtualized Security Operations Center (SOC) using Security Onion on Proxmox hypervisor for threat detection, network monitoring, and incident response training with Elastic Stack integration.
+          </li>
+          <li>
+            Simulated attack scenarios (PowerShell abuse, lateral movement,
+            persistence) to test detection and hunting skills.
+          </li>
+          <li>
+            Managed Proxmox virtualization cluster hosting multiple VMs with proper resource allocation, network isolation, and secure remote access via SSH/VPN integration.
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">Core Competencies</h2>
+        <div class="grid grid-cols-2 gap-x-6 text-gray-300">
+          <ul class="list-disc list-inside">
+            <li>Python, C++, PowerShell</li>
+            <li>HTML/CSS/Javascript</li>
+            <li>Windows, Linux (Arch, Debian: Kali, Ubuntu)</li>
+            <li>Active Directory</li>
+            <li>SIEM: SolarWinds SEM, Elastic Stack</li>
+            <li>EDR: Sophos</li>
+          </ul>
+          <ul class="list-disc list-inside">
+            <li>PDQ</li>
+            <li>IDS/IPS</li>
+            <li>Proxmox, VirtualBox, VMware</li>
+            <li>TCP/IP, DNS, DHCP, VPN, RDP</li>
+            <li>Strong interpersonal communication skills</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">Education</h2>
+        <p class="text-gray-300">
+          University of North Texas | Denton, Texas – <strong>May 2024</strong>
+        </p>
+        <p class="text-gray-300">
+          Bachelor of Science | Cybersecurity | ABET Accredited
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold mb-2">Certifications</h2>
+        <ul class="list-disc list-inside text-gray-300">
+          <li>CompTIA Security+ SY0-701 – <strong>April 2025</strong></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
+
