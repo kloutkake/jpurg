@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Posts</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <style>
+      /* Custom markdown styles for preview */
+      .markdown-preview {
+        line-height: 1.7;
+        color: #d1d5db;
+      }
+      .markdown-preview > * + * { margin-top: 1rem; }
+      .markdown-preview h1, .markdown-preview h2, .markdown-preview h3 { color: #fff; font-weight: 600; }
+      .markdown-preview h1 { font-size: 2rem; margin-top: 2rem; }
+      .markdown-preview h2 { font-size: 1.5rem; margin-top: 1.5rem; }
+      .markdown-preview h3 { font-size: 1.25rem; margin-top: 1.25rem; }
+      .markdown-preview ul, .markdown-preview ol { padding-left: 1.5rem; }
+      .markdown-preview li + li { margin-top: 0.25rem; }
+      .markdown-preview ul li { list-style-type: disc; }
+      .markdown-preview ol li { list-style-type: decimal; }
+      .markdown-preview pre { background: #1f2937; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; }
+      .markdown-preview code { background: #374151; padding: 0.125rem 0.25rem; border-radius: 0.25rem; }
+      .markdown-preview pre code { background: none; padding: 0; }
+      .markdown-preview blockquote { border-left: 4px solid #4b5563; padding-left: 1rem; font-style: italic; }
+      .markdown-preview a { color: #60a5fa; text-decoration: underline; }
+      .markdown-preview p { margin: 1rem 0; }
+    </style>  
+  </head>
+  <body class="bg-zinc-950 text-white px-6 py-10 max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Create New Blog Post</h1>
+
+    <label class="block mb-2 font-medium" for="postTitle">Title</label>
+    <input
+      id="postTitle"
+      type="text"
+      class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 text-white mb-4"
+      placeholder="Enter the post title"
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-4">
+      <div>
+        <label class="block mb-2 font-medium" for="postContent">Content (Markdown)</label>
+        <div class="mb-2 text-sm text-gray-400">
+          Supports: **bold**, *italic*, `code`, # headings, [links](url), lists, etc.
+        </div>
+        <textarea
+          id="postContent"
+          rows="20"
+          class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 text-white font-mono text-sm"
+          placeholder="# My Blog Post
+
+This is a paragraph with **bold text** and *italic text*.
+
+## Code example
+```javascript
+console.log('Hello world!');
+```
+
+- Bullet point 1
+- Bullet point 2
+
+[Link example](https://example.com)"
+        ></textarea>
+      </div>
+      
+      <div>
+        <label class="block mb-2 font-medium">Live Preview</label>
+        <div class="mb-2 text-sm text-gray-400">
+          Preview of how your post will look
+        </div>
+        <div id="preview" class="w-full h-[500px] p-3 rounded bg-zinc-900 border border-zinc-700 overflow-y-auto prose prose-invert prose-sm max-w-none">
+          <p class="text-gray-500">Start typing to see preview...</p>
+        </div>
+      </div>
+    </div>
+
+    <button
+      id="submitPost"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded"
+    >
+      Submit Post
+    </button>
+
+    <div id="messageArea" class="mt-4 text-sm"></div>
+
+    <script>
+      // Configure marked.js for better markdown support
+      marked.setOptions({
+        breaks: true,        // Convert \n to <br>
+        gfm: true,          // GitHub flavored markdown
+        headerIds: false,   // Don't add IDs to headers
+        mangle: false       // Don't mangle autolinked emails
+      });
+
+      // Live preview functionality
+      const contentTextarea = document.getElementById('postContent');
+      const preview = document.getElementById('preview');
+      
+      contentTextarea.addEventListener('input', function() {
+        const markdownContent = this.value;
+        if (markdownContent.trim()) {
+          try {
+            const htmlContent = marked.parse(markdownContent);
+            preview.innerHTML = htmlContent;
+          } catch (error) {
+            console.error('Markdown parsing error:', error);
+            preview.innerHTML = '<p class="text-red-400">Error parsing markdown</p>';
+          }
+        } else {
+          preview.innerHTML = '<p class="text-gray-500">Start typing to see preview...</p>';
+        }      
+      });
+
+      document
+        .getElementById("submitPost")
+        .addEventListener("click", async () => {
+          const title = document.getElementById("postTitle").value.trim();
+          const content = document.getElementById("postContent").value.trim();
+          const messageArea = document.getElementById("messageArea");
+
+          if (!title || !content) {
+            messageArea.textContent = "Title and content cannot be empty.";
+            messageArea.style.color = "red";
+            return;
+          }
+
+          // Format today's date
+          const today = new Date();
+          const dateStr = today.toISOString().split("T")[0];
+
+          // Create a slug for the URL
+          const slug = title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "");
+          
+          const filename = `/posts/${slug}.html`;
+          
+          console.log("Generated slug:", slug);
+          console.log("Generated filename:", filename);
+
+          try {
+            const response = await fetch("/backend/posts", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                title,
+                date: dateStr,
+                link: filename,
+                content,
+              }),
+            });
+
+            if (response.ok) {
+              messageArea.innerHTML = `
+                Post added successfully!<br>
+                <a href="${filename}" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline">
+                  → View your post
+                </a>
+              `;
+              messageArea.style.color = "lightgreen";
+              document.getElementById("postTitle").value = "";
+              document.getElementById("postContent").value = "";
+              preview.innerHTML = '<p class="text-gray-500">Start typing to see preview...</p>';
+            } else {
+              const errorData = await response.json();
+              messageArea.textContent = `Failed to submit post: ${
+                errorData.error || "Unknown error"
+              }`;
+              messageArea.style.color = "red";
+            }
+          } catch (err) {
+            console.error(err);
+            messageArea.textContent = "Error submitting post.";
+            messageArea.style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>
