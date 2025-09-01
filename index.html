@@ -4,28 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Home - Julian Purgahn</title>
-  </head>
-  <body class="bg-zinc-950 text-white">
-    <!-- Navbar injected via JavaScript -->
-    <div id="navbar-placeholder"></div>
+    <title>Julian's Website</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">  
+  </head>
+  <body class="bg-gray-600 text-white">
+    <!--#include virtual="/navbar/navbar.html" -->
     <!-- Home Content -->
     <main class="pt-28 pb-12 px-6 max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold mb-4">Hi, I’m Julian</h1>
-      <p class="text-lg leading-relaxed">
-        I'm an aspiring cybersecurity engineer passionate about blue team
-        operations and the offensive mindset it takes to defend systems. I build
-        projects and write about the things I learn and encounter along the way.
+      <h1 class="text-5xl font-mono font-bold mb-4 text-sky-300">Welcome!</h1>
+      <p class="text-lg font-mono">
+        Thanks for visiting my website, my name is Julian.
+      </p>
+      <h1 class="pt-15 text-4xl font-mono font-bold mb-4 text-sky-300">
+        About me
+      </h1>
+      <p class="pb-8 text-lg font-mono">
+        I'm a security enthusiast, cat owner (peep the gallery), hostage by my
+        partner, and volleyball enjoyer.
+      </p>
+      <p class="text-lg font-mono">
+        I have some projects in motion, with more to come, and I am using this
+        website as a place to document those projects in my <a class="text-orange-400" href="/frontend/pages/blog.html">blog</a>. I also want to showcase my partners <a class="text-purple-400" href="/frontend/pages/wanda.html">art</a>, and show off my <a class="text-lime-400" href="/frontend/pages/gallery.html">cats and cactus</a>.
+      </p>
+      <h1 class="pt-15 text-4xl font-mono font-bold mb-4 text-sky-300">
+        Friends
+      </h1>
+      <p class="text-lg font-mono">
+        Check out my friends incredible websites! (They're much smarter than me)
+      </p>
+      <p class="pt-2 text-2xl font-mono text-fuchsia-400">
+        <a href="https://armanhz.com/">- Armanhz</a>
+      </p>
+      <p class="pt-2 text-2xl font-mono text-fuchsia-400">
+      	<a href="https://openpunk.com/">- OpenPunk</a>
       </p>
     </main>
-
-    <script>
-      fetch("/navbar/navbar.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("navbar-placeholder").innerHTML = html;
-        });
-    </script>
   </body>
 </html>
+
